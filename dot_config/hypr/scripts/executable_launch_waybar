@@ -1,0 +1,5 @@
+#!/usr/bin/bash
+BASE_DIR="$HOME/.config/hypr/component/waybar"
+
+killall waybar
+waybar -c "${BASE_DIR}/config.jsonc" -s "${BASE_DIR}/style.css"

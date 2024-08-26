@@ -1,0 +1,117 @@
+{
+  "layer": "top",
+  "position": "bottom",
+  "height": 30,
+  "margin-left": 10,
+  "margin-right": 10,
+  "margin-bottom": 10,
+  "spacing": 0,
+  "modules-left": [
+    "clock",
+    "hyprland/workspaces",
+    "tray"
+  ],
+  "modules-right": [
+    "backlight",
+    "pulseaudio",
+    "battery",
+    "network"
+  ],
+  "modules-center": [
+    "hyprland/window"
+  ],
+  "clock": {
+    "format": "{:%H:%M}",
+    "format-alt": "{:%A, %B %d, %Y (%R)}",
+    "tooltip-format": "<tt>{calendar}</tt>"
+  },
+  "backlight": {
+    "format": "{icon} {percent}%",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  "battery": {
+    "bat": "BAT0",
+    "interval": 60,
+    "states": {
+      "warning": 30,
+      "critical": 20
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": "🗲 {capacity}%",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  "network": {
+    "on-click": "hyprctl dispatch exec [floating] -- kitty -e nmtui",
+    "interface": "wlo1",
+    "format": "{ifname}",
+    "format-wifi": "{essid} ({signalStrength}%)",
+    "format-ethernet": "{ipaddr}/{cidr}",
+    "format-disconnected": "{ifname} ",
+    "tooltip-format": "{ifname} via {gwaddr}",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%)",
+    "tooltip-format-ethernet": "{ifname}",
+    "tooltip-format-disconnected": "Disconnected"
+  },
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-bluetooth": "{volume}% {icon}",
+    "format-muted": "0%",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": [
+        "",
+        ""
+      ]
+    },
+    "scroll-step": 1,
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "ignored-sinks": [
+      "Easy Effects Sink"
+    ]
+  },
+  "idle_inhibitor": {
+    "format": "inhibit idle",
+    "format-icons": {
+      "activated": "",
+      "deactivated": ""
+    }
+  },
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "format-active": " {icon} ",
+    "on-click": "activate"
+  },
+  "hyprland/window": {
+    "format": "{}",
+    "rewrite": {
+      "(.*) — Mozilla Firefox": "🌎 $1",
+      "(.*) - fish": "> [$1]"
+    },
+    "separate-outputs": true
+  },
+  "tray": {
+    "icon-size": 18,
+    "spacing": 10
+  }
+}

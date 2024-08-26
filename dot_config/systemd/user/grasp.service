@@ -1,0 +1,10 @@
+[Unit]
+Description=Grasp extension server conterpart
+
+[Install]
+WantedBy=default.target
+
+[Service]
+ExecStart=/usr/bin/python3 -m grasp_backend serve --port 12212 --path /home/martini/org-roam/bookmarks.org --template '* %%U %%:description %%:tags\n%%:link\n%%:initial\n'
+Type=simple
+Restart=always

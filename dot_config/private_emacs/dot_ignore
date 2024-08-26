@@ -1,0 +1,9 @@
+straight/
+melpa/
+url/
+.cache/
+backups/
+request/
+eln-cache/
+history
+savehist

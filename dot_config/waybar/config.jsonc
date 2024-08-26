@@ -1,0 +1,118 @@
+{
+  "layer": "top",
+  "position": "top",
+  "spacing": 0,
+  "modules-left": [
+    "sway/workspaces"
+  ],
+  "modules-center": [
+    "clock"
+  ],
+  "modules-right": [
+    "network",
+    "battery",
+    "backlight",
+    "pulseaudio",
+    "tray"
+  ],
+  "clock": {
+    "format": "{:%d-%m-%Y %H:%M}",
+    "tooltip-format": "<tt>{calendar}</tt>",
+    "calendar": {
+      "mode": "year",
+      "mode-mon-col": 3,
+      "weeks-pos": "",
+      "on-scroll": 1,
+      "format": {
+        "months": "<span color='#ffead3'><b>{}</b></span>",
+        "days": "<span color='#ecc6d9'><b>{}</b></span>",
+        "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+        "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+      }
+    },
+    "actions": {
+      "on-click": "mode"
+    }
+  },
+  "backlight": {
+    "format": "{icon}  {percent}",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  "battery": {
+    "bat": "BAT0",
+    "interval": 60,
+    "states": {
+      "warning": 30,
+      "critical": 20
+    },
+    "format": "{icon}  {capacity}",
+    "format-charging": "🗲 {capacity}",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  "network": {
+    "on-click": "",
+    "interface": "wlo1",
+    "format": "{ifname}",
+    "format-wifi": "  {essid}",
+    "format-ethernet": "{ipaddr}/{cidr}",
+    "format-disconnected": "{ifname} ",
+    "tooltip-format": "{ifname} via {gwaddr}",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%)",
+    "tooltip-format-ethernet": "{ifname}",
+    "tooltip-format-disconnected": "Disconnected"
+  },
+  "pulseaudio": {
+    "format": "{icon}  {volume}",
+    "format-bluetooth": "{volume}% {icon}",
+    "format-muted": "  0",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": [
+        "",
+        ""
+      ]
+    },
+    "scroll-step": 1,
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "ignored-sinks": [
+      "Easy Effects Sink"
+    ]
+  },
+  "idle_inhibitor": {
+    "format": "inhibit idle",
+    "format-icons": {
+      "activated": "",
+      "deactivated": ""
+    }
+  },
+  "sway/workspaces": {
+    "format": "{icon}",
+    "on-click": "activate"
+  },
+  "tray": {
+    "icon-size": 18,
+    "spacing": 10
+  }
+}

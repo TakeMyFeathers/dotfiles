@@ -1,0 +1,15 @@
+set statusbar-home-tilde true
+
+# make things fit better
+#set scroll-page-aware true
+set adjust-open width
+
+#set recolor true
+#set recolor-reverse-video true
+
+#set render-loading false
+
+set selection-clipboard clipboard
+
+#map <C-l> exec copy_ref
+#map <C-g> exec "copy_ref --section"

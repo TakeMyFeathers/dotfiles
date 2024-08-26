@@ -1,0 +1,4 @@
+* Blogs :elfeed:
+** entry-title: \(linux\|linus\|ubuntu\|kde\|gnome\)                  :linux:
+** http://protesilaos.com/codelog.xml
+** https://api.quantamagazine.org/feed/

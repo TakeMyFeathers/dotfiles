@@ -1,0 +1,47 @@
+HISTFILE="$HOME/.zsh_history"
+HIST_STAMPS="yyyy-mm-dd"
+HISTORY_IGNORE="(ls|cd|pwd|exit)*"
+HISTSIZE="100000"
+SAVEHIST="100000"
+
+setopt EXTENDED_HISTORY
+setopt INC_APPEND_HISTORY
+setopt SHARE_HISTORY
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_SAVE_NO_DUPS
+setopt HIST_VERIFY
+setopt APPEND_HISTORY
+setopt HIST_NO_STORE
+setopt HIST_REDUCE_BLANKS
+
+ZSH_THEME="robbyrussell"
+DISABLE_UNTRACKED_FILES_DIRTY="true"
+export FZF_DEFAULT_COMMAND='ag --hidden -g ""'
+plugins=(git colored-man-pages fzf)
+
+autoload -U compinit && compinit
+source $ZSH/oh-my-zsh.sh
+
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+
+alias nnn='nnn -A'
+alias cat='bat'
+
+alias cp='cp -iv'
+alias mv='mv -iv'
+alias rm='rm -Iv'
+
+[ -f "/home/martini/.ghcup/env" ] && . "/home/martini/.ghcup/env" # ghcup-env
+
+# >>> juliaup initialize >>>
+
+# !! Contents within this block are managed by juliaup !!
+
+path=('/home/martini/.juliaup/bin' $path)
+export PATH
+
+# <<< juliaup initialize <<<

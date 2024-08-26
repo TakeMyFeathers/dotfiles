@@ -1,0 +1,13 @@
+profile {
+  output "AOC U28P2G6B PCSN1JA000129" enable scale 1 
+  output eDP-1 disable 
+}
+
+profile {
+  output HDMI-A-1 enable scale 1 
+  output eDP-1 enable scale 1 
+}
+
+profile {
+  output eDP-1 enable scale 1
+}

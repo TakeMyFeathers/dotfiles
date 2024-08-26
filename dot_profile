@@ -1,0 +1,23 @@
+. "$HOME/.cargo/env"
+
+# Added by Toolbox App
+export XDG_CONFIG_HOME="$HOME/.config"
+export PATH="$PATH:$HOME/.cargo/bin"
+export PATH="$PATH:/home/martini/.local/share/JetBrains/Toolbox/scripts"
+
+[ -f "/home/martini/.ghcup/env" ] && . "/home/martini/.ghcup/env" # ghcup-env
+
+# >>> juliaup initialize >>>
+
+# !! Contents within this block are managed by juliaup !!
+
+case ":$PATH:" in
+    *:/home/martini/.juliaup/bin:*)
+        ;;
+
+    *)
+        export PATH=/home/martini/.juliaup/bin${PATH:+:${PATH}}
+        ;;
+esac
+
+# <<< juliaup initialize <<<
